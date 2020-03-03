@@ -163,8 +163,13 @@
         <item>
          <widget class="QComboBox" name="comboBox">
           <property name="currentText">
-           <string>Gaussian</string>
+           <string>Select</string>
           </property>
+          <item>
+           <property name="text">
+            <string>Select</string>
+           </property>
+          </item>
           <item>
            <property name="text">
             <string>Gaussian</string>
@@ -240,8 +245,13 @@
         <item>
          <widget class="QComboBox" name="comboBox_2">
           <property name="currentText">
-           <string>Gaussian</string>
+           <string>Select</string>
           </property>
+          <item>
+           <property name="text">
+            <string>Select</string>
+           </property>
+          </item>
           <item>
            <property name="text">
             <string>Gaussian</string>
