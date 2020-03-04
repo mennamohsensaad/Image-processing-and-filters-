@@ -9,6 +9,9 @@ import matplotlib.pyplot as pl
 from PIL.ImageQt import ImageQt
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
+from PyQt5.QtWidgets import QLineEdit
+from PyQt5.QtWidgets import QLabel
+
 import sys
 from os import listdir
 from os.path import isfile
@@ -102,22 +105,17 @@ class Filters(QtWidgets.QMainWindow):
         
     def Label1_Name_Size(self):
         
-#        self.ui.label_12 = QtWidgets.QLabel(self)
-        self.ui.label_12 = QLabel(self.application)
-        self.ui.label_12.setText('Marilyn')
-#        self.ui.label_12.move(100, 100)
-#        self.ui.label_12.show
-#        self.ui.label_12.setText('hola')####mkan i name nfsooo
-        
-        #label_12.setAlignment(Qt.AlignCenter)
-        
-#        labelB = QtWidgets.QLabel(windowExample)
-#        labelA.setText('Label Example')
-    #        
-#        
-#    def Label2_Name_Size(self):
-        
+        #self.ui.label_12 = QLabel(self)
+        self.ui.label_12.setText('Name:Marylin')
+        self.ui.label_13.setText('Size:256')
 
+        
+      
+      
+    def Label2_Name_Size(self):
+        
+        self.ui.label_15.setText('Name:Einstein')
+        self.ui.label_14.setText('Size:256')
 
 #    def scaleSpectrum(self,A):
 #        return numpy.real(numpy.log10(numpy.absolute(A) + numpy.ones(A.shape)))
