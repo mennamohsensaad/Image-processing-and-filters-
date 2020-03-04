@@ -146,8 +146,8 @@
       <widget class="QWidget" name="horizontalLayoutWidget">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>40</y>
+         <x>10</x>
+         <y>10</y>
          <width>311</width>
          <height>41</height>
         </rect>
@@ -156,12 +156,36 @@
         <item>
          <widget class="QLabel" name="label_3">
           <property name="text">
-           <string>Select Filter</string>
+           <string>       Add noise</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QComboBox" name="comboBox"/>
+         <widget class="QComboBox" name="comboBox">
+          <property name="currentText">
+           <string>Select</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Select</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Gaussian</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Uniform</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Salt-papper</string>
+           </property>
+          </item>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -177,6 +201,95 @@
        <property name="title">
         <string>Additional Parameters</string>
        </property>
+       <widget class="QLabel" name="label_5">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>20</y>
+          <width>152</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>                          Mask size</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>20</y>
+          <width>51</width>
+          <height>41</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="horizontalLayoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>311</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>      Select Filter</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox_2">
+          <property name="currentText">
+           <string>Select</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Select</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Gaussian</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Mean</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Median</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Sobel</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Roberts</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Prewitt</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Canny</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
     </widget>
