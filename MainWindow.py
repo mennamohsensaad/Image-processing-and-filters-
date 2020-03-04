@@ -2,7 +2,6 @@
 
 # Form implementation generated from reading ui file 'MainWindow.ui'
 #
-<<<<<<< HEAD
 # Created by: PyQt5 UI code generator 5.14.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -11,14 +10,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-=======
-# Created by: PyQt5 UI code generator 5.9.2
-#
-# WARNING! All changes made in this file will be lost!
-
-from PyQt5 import QtCore, QtGui, QtWidgets
-
->>>>>>> 9a457b0d2432dd8c8c3d219ea141fd3937deb704
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -33,11 +24,7 @@ class Ui_MainWindow(object):
         self.tab_filters = QtWidgets.QWidget()
         self.tab_filters.setObjectName("tab_filters")
         self.label_filters_input = QtWidgets.QLabel(self.tab_filters)
-<<<<<<< HEAD
         self.label_filters_input.setGeometry(QtCore.QRect(190, 30, 331, 231))
-=======
-        self.label_filters_input.setGeometry(QtCore.QRect(180, 30, 331, 231))
->>>>>>> 9a457b0d2432dd8c8c3d219ea141fd3937deb704
         self.label_filters_input.setAutoFillBackground(True)
         self.label_filters_input.setFrameShape(QtWidgets.QFrame.Box)
         self.label_filters_input.setScaledContents(True)
@@ -64,11 +51,7 @@ class Ui_MainWindow(object):
         self.groupBox.setGeometry(QtCore.QRect(30, 280, 751, 111))
         self.groupBox.setObjectName("groupBox")
         self.horizontalLayoutWidget = QtWidgets.QWidget(self.groupBox)
-<<<<<<< HEAD
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(20, 40, 311, 41))
-=======
         self.horizontalLayoutWidget.setGeometry(QtCore.QRect(10, 10, 311, 41))
->>>>>>> 9a457b0d2432dd8c8c3d219ea141fd3937deb704
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -78,19 +61,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addWidget(self.label_3)
         self.comboBox = QtWidgets.QComboBox(self.horizontalLayoutWidget)
         self.comboBox.setObjectName("comboBox")
-<<<<<<< HEAD
-=======
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
->>>>>>> 9a457b0d2432dd8c8c3d219ea141fd3937deb704
         self.horizontalLayout.addWidget(self.comboBox)
         self.groupBox_2 = QtWidgets.QGroupBox(self.groupBox)
         self.groupBox_2.setGeometry(QtCore.QRect(380, 30, 311, 71))
         self.groupBox_2.setObjectName("groupBox_2")
-<<<<<<< HEAD
-=======
         self.label_5 = QtWidgets.QLabel(self.groupBox_2)
         self.label_5.setGeometry(QtCore.QRect(40, 20, 152, 39))
         self.label_5.setObjectName("label_5")
@@ -117,7 +95,6 @@ class Ui_MainWindow(object):
         self.comboBox_2.addItem("")
         self.comboBox_2.addItem("")
         self.horizontalLayout_2.addWidget(self.comboBox_2)
->>>>>>> 9a457b0d2432dd8c8c3d219ea141fd3937deb704
         self.tabWidget.addTab(self.tab_filters, "")
         self.tab_histograms = QtWidgets.QWidget()
         self.tab_histograms.setObjectName("tab_histograms")
@@ -157,37 +134,24 @@ class Ui_MainWindow(object):
         self.tab_hybrid.setObjectName("tab_hybrid")
         self.label_histograms_input_2 = QtWidgets.QLabel(self.tab_hybrid)
         self.label_histograms_input_2.setGeometry(QtCore.QRect(180, 20, 241, 171))
-<<<<<<< HEAD
         self.label_histograms_input_2.setAutoFillBackground(True)
         self.label_histograms_input_2.setFrameShape(QtWidgets.QFrame.Box)
         self.label_histograms_input_2.setScaledContents(True)
-=======
-        self.label_histograms_input_2.setFrameShape(QtWidgets.QFrame.Box)
->>>>>>> 9a457b0d2432dd8c8c3d219ea141fd3937deb704
         self.label_histograms_input_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.label_histograms_input_2.setObjectName("label_histograms_input_2")
         self.label_histograms_hinput_2 = QtWidgets.QLabel(self.tab_hybrid)
         self.label_histograms_hinput_2.setGeometry(QtCore.QRect(180, 200, 241, 191))
-<<<<<<< HEAD
         self.label_histograms_hinput_2.setAutoFillBackground(True)
         self.label_histograms_hinput_2.setFrameShape(QtWidgets.QFrame.Box)
         self.label_histograms_hinput_2.setTextFormat(QtCore.Qt.PlainText)
         self.label_histograms_hinput_2.setScaledContents(True)
-=======
-        self.label_histograms_hinput_2.setFrameShape(QtWidgets.QFrame.Box)
-        self.label_histograms_hinput_2.setTextFormat(QtCore.Qt.PlainText)
->>>>>>> 9a457b0d2432dd8c8c3d219ea141fd3937deb704
         self.label_histograms_hinput_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.label_histograms_hinput_2.setObjectName("label_histograms_hinput_2")
         self.label_histograms_output_2 = QtWidgets.QLabel(self.tab_hybrid)
         self.label_histograms_output_2.setGeometry(QtCore.QRect(430, 20, 431, 371))
-<<<<<<< HEAD
         self.label_histograms_output_2.setAutoFillBackground(True)
         self.label_histograms_output_2.setFrameShape(QtWidgets.QFrame.Box)
         self.label_histograms_output_2.setScaledContents(True)
-=======
-        self.label_histograms_output_2.setFrameShape(QtWidgets.QFrame.Box)
->>>>>>> 9a457b0d2432dd8c8c3d219ea141fd3937deb704
         self.label_histograms_output_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.label_histograms_output_2.setObjectName("label_histograms_output_2")
         self.label_12 = QtWidgets.QLabel(self.tab_hybrid)
@@ -222,11 +186,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-<<<<<<< HEAD
         self.tabWidget.setCurrentIndex(2)
-=======
-        self.tabWidget.setCurrentIndex(0)
->>>>>>> 9a457b0d2432dd8c8c3d219ea141fd3937deb704
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -238,10 +198,6 @@ class Ui_MainWindow(object):
         self.label.setText(_translate("MainWindow", "Name:"))
         self.label_2.setText(_translate("MainWindow", "Size:"))
         self.groupBox.setTitle(_translate("MainWindow", "Filter Settings"))
-<<<<<<< HEAD
-        self.label_3.setText(_translate("MainWindow", "Select Filter"))
-        self.groupBox_2.setTitle(_translate("MainWindow", "Additional Parameters"))
-=======
         self.label_3.setText(_translate("MainWindow", "       Add noise"))
         self.comboBox.setCurrentText(_translate("MainWindow", "Select"))
         self.comboBox.setItemText(0, _translate("MainWindow", "Select"))
@@ -260,7 +216,6 @@ class Ui_MainWindow(object):
         self.comboBox_2.setItemText(5, _translate("MainWindow", "Roberts"))
         self.comboBox_2.setItemText(6, _translate("MainWindow", "Prewitt"))
         self.comboBox_2.setItemText(7, _translate("MainWindow", "Canny"))
->>>>>>> 9a457b0d2432dd8c8c3d219ea141fd3937deb704
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_filters), _translate("MainWindow", "Filters"))
         self.label_histograms_houtput.setText(_translate("MainWindow", "Output Histogram"))
         self.pushButton_histograms_load.setText(_translate("MainWindow", "Load image"))
@@ -281,7 +236,3 @@ class Ui_MainWindow(object):
         self.pushButton_histograms_load_3.setText(_translate("MainWindow", "Load image B"))
         self.pushButton_histograms_load_4.setText(_translate("MainWindow", "Make Hybrid"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_hybrid), _translate("MainWindow", "Hybrid"))
-<<<<<<< HEAD
-=======
-
->>>>>>> 9a457b0d2432dd8c8c3d219ea141fd3937deb704

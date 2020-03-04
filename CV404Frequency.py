@@ -7,6 +7,8 @@ from MainWindow import Ui_MainWindow
 from PIL import Image
 import matplotlib.pyplot as pl
 from PIL.ImageQt import ImageQt
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 import sys
 from os import listdir
 from os.path import isfile
@@ -45,6 +47,8 @@ class Filters(QtWidgets.QMainWindow):
           #  marilyn  = ndimage.imread("marilyn.png", flatten=True)
             #plt.imshow(self.color_img, cmap=plt.get_cmap('gray'), vmin=0, vmax=1)
             self.Display_image1()
+            self.Label1_Name_Size()
+            
             
     def rgb2gray(self,rgb_image):
         return np.dot(rgb_image[...,:3], [0.299, 0.587, 0.114])  # ... mean  all rgb values     
@@ -59,7 +63,8 @@ class Filters(QtWidgets.QMainWindow):
 #            einstein = ndimage.imread("einstein.png", flatten=True)
             self.gray_img2 =self.rgb2gray(self.color_img2)
             self.Display_image2()
-      
+            self.Label2_Name_Size()
+            
     def button_clicked3(self):  
 
         
@@ -91,9 +96,27 @@ class Filters(QtWidgets.QMainWindow):
         self.ui.label_histograms_output_2.setPixmap(self.pixmap)#####for input image 2
         self.ui.label_histograms_output_2.show     
         
-        label_histograms_output_2 = QLabel(self)
+        #label_histograms_output_2 = QLabel(self)
         ##pixmap = QPixmap ('marilyn-einstein.png')
-        label_histograms_output_2.setPixmap(pixmap)
+        #label_histograms_output_2.setPixmap(pixmap)
+        
+    def Label1_Name_Size(self):
+        
+#        self.ui.label_12 = QtWidgets.QLabel(self)
+        self.ui.label_12 = QLabel(self.application)
+        self.ui.label_12.setText('Marilyn')
+#        self.ui.label_12.move(100, 100)
+#        self.ui.label_12.show
+#        self.ui.label_12.setText('hola')####mkan i name nfsooo
+        
+        #label_12.setAlignment(Qt.AlignCenter)
+        
+#        labelB = QtWidgets.QLabel(windowExample)
+#        labelA.setText('Label Example')
+    #        
+#        
+#    def Label2_Name_Size(self):
+        
 
 
 #    def scaleSpectrum(self,A):
@@ -111,7 +134,7 @@ class Filters(QtWidgets.QMainWindow):
        return numpy.array([[gaussian(i,j) for j in range(numCols)] for i in range(numRows)])
 
 ######apply filter by doing coord. multiplication
-    def filterDFT(self,imageMatrix, filterMatrix):
+    def filterFT(self,imageMatrix, filterMatrix):
         ##########apply fourier
        shiftedDFT = fftshift(fft2(imageMatrix))
 #       misc.imsave("dft.png", self.scaleSpectrum(shiftedDFT))
@@ -122,12 +145,12 @@ class Filters(QtWidgets.QMainWindow):
     ####get ride of High freq. comp.(((((((((( Apply fourier to image matrix))))))&&&&& make gaussian for lpf *g(x,y))
     def lowPass(self,imageMatrix, sigma):
        n,m = imageMatrix.shape
-       return self.filterDFT(imageMatrix, self.makeGaussianFilter(n, m, sigma, highPass=False))
+       return self.filterFT(imageMatrix, self.makeGaussianFilter(n, m, sigma, highPass=False))
     
     ####get ride of Low freq. comp (((((((((( Apply fourier to image matrix)))))) &&&&&  make gaussian for lpf *1-g(x,y))
     def highPass(self,imageMatrix, sigma):
        n,m = imageMatrix.shape
-       return self.filterDFT(imageMatrix, self.makeGaussianFilter(n, m, sigma, highPass=True))
+       return self.filterFT(imageMatrix, self.makeGaussianFilter(n, m, sigma, highPass=True))
     
     ######compining lowpass part of an image with highpass part of another image.
     def hybridImage(self ,highFreqImg, lowFreqImg, sigmaHigh, sigmaLow):
