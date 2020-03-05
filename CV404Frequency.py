@@ -11,7 +11,6 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import QLineEdit
 from PyQt5.QtWidgets import QLabel
-
 import sys
 from os import listdir
 from os.path import isfile
@@ -47,10 +46,17 @@ class Filters(QtWidgets.QMainWindow):
             self.pixmap = pixmap.scaled(256, 256, QtCore.Qt.KeepAspectRatio,QtCore.Qt.FastTransformation) 
             self.color_img1 =mpimg.imread(fileName)
             self.gray_img1 =self.rgb2gray(self.color_img1) 
+            
+            self.pixels1 = np.asarray(self.color_img1)
+            self.pixels1 = self.pixels1.astype('float32')
+#            print(self.pixels1.shape)
+            
+            
           #  marilyn  = ndimage.imread("marilyn.png", flatten=True)
             #plt.imshow(self.color_img, cmap=plt.get_cmap('gray'), vmin=0, vmax=1)
             self.Display_image1()
             self.Label1_Name_Size()
+            self.size1()
             
             
     def rgb2gray(self,rgb_image):
@@ -65,8 +71,14 @@ class Filters(QtWidgets.QMainWindow):
             #plt.imshow(self.color_img, cmap=plt.get_cmap('gray'), vmin=0, vmax=1)
 #            einstein = ndimage.imread("einstein.png", flatten=True)
             self.gray_img2 =self.rgb2gray(self.color_img2)
+            
+            self.pixels2 = np.asarray(self.color_img2)
+            self.pixels2 = self.pixels2.astype('float32')
+#            print(self.pixels2.shape)
+            
             self.Display_image2()
             self.Label2_Name_Size()
+            self.size2()
             
     def button_clicked3(self):  
 
@@ -76,7 +88,6 @@ class Filters(QtWidgets.QMainWindow):
         #       img= Image.open('marilyn-einstein.png')
         #       img.show()
            output_hybird = np.array(numpy.real(hybrid)*200).astype(np.uint8)
-           ##print(numpy.real(hybrid)*10)
            output_hybird = qimage2ndarray.array2qimage(output_hybird)
            output_hybird = QPixmap(output_hybird)
            output_hybird = output_hybird.scaled(256, 256, QtCore.Qt.KeepAspectRatio, QtCore.Qt.FastTransformation)
@@ -107,15 +118,21 @@ class Filters(QtWidgets.QMainWindow):
         
         #self.ui.label_12 = QLabel(self)
         self.ui.label_12.setText('Name:Marylin')
-        self.ui.label_13.setText('Size:256')
 
+        
+        
+    def size1(self):
+        self.ui.lineEdit.setText(""+str(self.pixels1.shape[0])+""+str('x')+""+str(self.pixels1.shape[1])+"")
+
+    def size2(self):
+        self.ui.lineEdit_2.setText(""+str(self.pixels2.shape[0])+""+str('x')+""+str(self.pixels2.shape[1])+"")
         
       
       
     def Label2_Name_Size(self):
         
         self.ui.label_15.setText('Name:Einstein')
-        self.ui.label_14.setText('Size:256')
+#        self.ui.label_14.setText('Size:256')
 
 #    def scaleSpectrum(self,A):
 #        return numpy.real(numpy.log10(numpy.absolute(A) + numpy.ones(A.shape)))
@@ -169,5 +186,5 @@ def main():
 if __name__ == "__main__":
    main() 
    
-   einstein = ndimage.imread("einstein.png", flatten=True)
-   marilyn  = ndimage.imread("marilyn.png", flatten=True)
+#   einstein = ndimage.imread("einstein.png", flatten=True)
+#   marilyn  = ndimage.imread("marilyn.png", flatten=True)
