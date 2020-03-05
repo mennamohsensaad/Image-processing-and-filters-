@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'MainWindow.ui'
+# Form implementation generated from reading ui file 'MainWindow_Filters.ui'
 #
 # Created by: PyQt5 UI code generator 5.14.1
 #
@@ -42,7 +42,7 @@ class Ui_MainWindow(object):
         self.pushButton_filters_load.setGeometry(QtCore.QRect(20, 30, 121, 81))
         self.pushButton_filters_load.setObjectName("pushButton_filters_load")
         self.label = QtWidgets.QLabel(self.tab_filters)
-        self.label.setGeometry(QtCore.QRect(30, 140, 71, 21))
+        self.label.setGeometry(QtCore.QRect(30, 140, 111, 21))
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.tab_filters)
         self.label_2.setGeometry(QtCore.QRect(30, 170, 71, 21))
@@ -95,6 +95,10 @@ class Ui_MainWindow(object):
         self.comboBox_2.addItem("")
         self.comboBox_2.addItem("")
         self.horizontalLayout_2.addWidget(self.comboBox_2)
+        self.lineEdit_3 = QtWidgets.QLineEdit(self.tab_filters)
+        self.lineEdit_3.setGeometry(QtCore.QRect(62, 170, 101, 20))
+        self.lineEdit_3.setText("")
+        self.lineEdit_3.setObjectName("lineEdit_3")
         self.tabWidget.addTab(self.tab_filters, "")
         self.tab_histograms = QtWidgets.QWidget()
         self.tab_histograms.setObjectName("tab_histograms")
@@ -192,7 +196,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):

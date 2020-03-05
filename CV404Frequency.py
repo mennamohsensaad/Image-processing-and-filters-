@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import   QFileDialog  ,QWidget,QApplication
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QLabel
 from PyQt5.QtGui import QIcon
-from MainWindow_Hybrid import Ui_MainWindow
+from MainWindow_Frequency import Ui_MainWindow
 from PIL import Image
 import matplotlib.pyplot as pl
 from PIL.ImageQt import ImageQt
@@ -27,17 +27,14 @@ from matplotlib.pyplot import imread
 from imageio import imread
 import qimage2ndarray
 
-class Filters(QtWidgets.QMainWindow):
+class Frequency(QtWidgets.QMainWindow):
     def __init__(self):
-        super(Filters, self).__init__()
+        super(Frequency, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-
         self.ui.pushButton_histograms_load_2.clicked.connect(self.button_clicked1)##LOAD IMAGE 1 HYBRID
         self.ui.pushButton_histograms_load_3.clicked.connect(self.button_clicked2)##LOAD IMAGE 2 HYBRID
         self.ui.pushButton_histograms_load_4.clicked.connect(self.button_clicked3)##OUTPUT HYBRID
-        #self.ui.pushButton_filters_load.clicked.connect(self.button_clicked)##LOAD IMAGE 2 FILTERS
-        #self.ui.comboBox_2.currentIndexChanged.connect(self.Draw_histogram) 
 
     def button_clicked1(self):  
         fileName, _filter = QFileDialog.getOpenFileName(self, "Title"," " , "Filter -- img file (*.jpg *.PNG);;img file (*.PNG)")
@@ -49,13 +46,9 @@ class Filters(QtWidgets.QMainWindow):
             
             self.pixels1 = np.asarray(self.color_img1)
             self.pixels1 = self.pixels1.astype('float32')
-#            print(self.pixels1.shape)
             
-            
-          #  marilyn  = ndimage.imread("marilyn.png", flatten=True)
-            #plt.imshow(self.color_img, cmap=plt.get_cmap('gray'), vmin=0, vmax=1)
             self.Display_image1()
-            self.Label1_Name_Size()
+            self.Label1_Name()
             self.size1()
             
             
@@ -77,16 +70,14 @@ class Filters(QtWidgets.QMainWindow):
 #            print(self.pixels2.shape)
             
             self.Display_image2()
-            self.Label2_Name_Size()
+            self.Label2_Name()
             self.size2()
             
     def button_clicked3(self):  
 
-        
            hybrid   = self.hybridImage (self.gray_img2, self.gray_img1, 25, 10)
 #           misc.imsave("marilyn-einstein.png", numpy.real(hybrid))
-        #       img= Image.open('marilyn-einstein.png')
-        #       img.show()
+           
            output_hybird = np.array(numpy.real(hybrid)*200).astype(np.uint8)
            output_hybird = qimage2ndarray.array2qimage(output_hybird)
            output_hybird = QPixmap(output_hybird)
@@ -94,8 +85,7 @@ class Filters(QtWidgets.QMainWindow):
            
            self.ui.label_histograms_output_2.setPixmap(output_hybird)
            self.ui.label_histograms_output_2.show
-            #self.hybridImage()
-#           self.Display_image3()        
+       
         
     def Display_image1(self):
         self.ui.label_histograms_input_2.setPixmap(self.pixmap)####for input image 1
@@ -114,13 +104,16 @@ class Filters(QtWidgets.QMainWindow):
         ##pixmap = QPixmap ('marilyn-einstein.png')
         #label_histograms_output_2.setPixmap(pixmap)
         
-    def Label1_Name_Size(self):
+    def Label1_Name(self):
         
         #self.ui.label_12 = QLabel(self)
         self.ui.label_12.setText('Name:Marylin')
+      
+    def Label2_Name(self):
+        
+        self.ui.label_15.setText('Name:Einstein')
 
-        
-        
+
     def size1(self):
         self.ui.lineEdit.setText(""+str(self.pixels1.shape[0])+""+str('x')+""+str(self.pixels1.shape[1])+"")
 
@@ -128,11 +121,6 @@ class Filters(QtWidgets.QMainWindow):
         self.ui.lineEdit_2.setText(""+str(self.pixels2.shape[0])+""+str('x')+""+str(self.pixels2.shape[1])+"")
         
       
-      
-    def Label2_Name_Size(self):
-        
-        self.ui.label_15.setText('Name:Einstein')
-#        self.ui.label_14.setText('Size:256')
 
 #    def scaleSpectrum(self,A):
 #        return numpy.real(numpy.log10(numpy.absolute(A) + numpy.ones(A.shape)))
@@ -178,7 +166,7 @@ class Filters(QtWidgets.QMainWindow):
 #       print(m)
 def main():
     app = QtWidgets.QApplication(sys.argv)
-    application = Filters()
+    application = Frequency()
     application.show()
     
     sys.exit(app.exec_())

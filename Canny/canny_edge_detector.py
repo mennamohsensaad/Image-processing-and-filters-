@@ -1,12 +1,51 @@
+
+from MainWindow_Filters import Ui_MainWindow
 from scipy import ndimage
 from scipy.ndimage.filters import convolve
-
 from scipy import misc
 import numpy as np
+from PyQt5 import QtWidgets,QtGui , QtCore ,Qt
+from PyQt5.QtWidgets import   QFileDialog  ,QWidget,QApplication
+from PyQt5.QtGui import QPixmap
+from PyQt5.QtWidgets import QLabel
+from PyQt5.QtGui import QIcon
+from PIL import Image
+import matplotlib.pyplot as pl
+from PIL.ImageQt import ImageQt
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import QLineEdit
+from PyQt5.QtWidgets import QLabel
+import sys
+from os import listdir
+from os.path import isfile
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+import numpy
+from numpy.fft import fft2, ifft2, fftshift, ifftshift
+from scipy import misc
+from scipy import ndimage
+import math
+from scipy.misc import imsave
+from matplotlib.pyplot import imread
+from imageio import imread
+import qimage2ndarray
 
-class cannyEdgeDetector:
-    def __init__(self, imgs, sigma=1, kernel_size=5, weak_pixel=75, strong_pixel=255, lowthreshold=0.05, highthreshold=0.15):
-        self.imgs = imgs
+
+#class cannyEdgeDetector(QtWidgets.QMainWindow):
+#    
+class Filters (QtWidgets.QMainWindow):
+    def __init__(self, sigma=1, kernel_size=5, weak_pixel=75, strong_pixel=255, lowthreshold=0.05, highthreshold=0.15):
+
+        
+        
+        super(Filters, self).__init__()
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+        self.ui.pushButton_filters_load.clicked.connect(self.button_clicked1)##LOAD IMAGE 1 HYBRID
+        
+        
         self.imgs_final = []
         self.img_smoothed = None
         self.gradientMat = None
@@ -20,6 +59,58 @@ class cannyEdgeDetector:
         self.lowThreshold = lowthreshold
         self.highThreshold = highthreshold
         return 
+    
+
+    def button_clicked1(self):  
+        fileName, _filter = QFileDialog.getOpenFileName(self, "Title"," " , "Filter -- img file (*.jpg *.PNG);;img file (*.PNG)")
+        if fileName:
+            pixmap = QPixmap(fileName)
+            self.pixmap = pixmap.scaled(256, 256, QtCore.Qt.KeepAspectRatio,QtCore.Qt.FastTransformation) 
+            self.color_img =mpimg.imread(fileName)
+            self.gray_img =self.rgb2gray(self.color_img) 
+            
+            self.Input_Image = np.asarray(self.color_img)
+            self.Image = self.Input_Image.astype('float32')
+            print(self.Input_Image.shape)
+            
+            
+            self.Label_Name()
+            self.size()
+            self.Display_image1() 
+            
+            
+            self.output = np.asarray(numpy.real(self.imgs_final)).astype(np.uint8)
+            self.output= qimage2ndarray.array2qimage(self.output)
+            self.output= QPixmap(self.output)
+            self.output = self.output.scaled(256, 256, QtCore.Qt.KeepAspectRatio, QtCore.Qt.FastTransformation)
+            
+            self.ui.label_filters_output.setPixmap(self.output)
+            self.ui.label_filters_output.show
+            
+            
+    def Display_image1(self): 
+        self.ui.label_filters_input.setPixmap(self.pixmap)####for input image 1
+        self.ui.label_filters_input.show
+        
+        
+        
+    def Label_Name(self):
+        self.ui.label.setText('Name:FaceImage')  
+        
+        
+    def size(self):
+        self.ui.lineEdit_3.setText(""+str(self.Input_Image.shape[0])+""+str('x')+""+str(self.Input_Image.shape[1])+"")
+        
+#            print(self.pixels1.shape)
+    def rgb2gray(self,rgb_image):
+        return np.dot(rgb_image[...,:3], [0.299, 0.587, 0.114])  # ... mean  all rgb values     
+    
+    
+    
+    
+    
+    
+    
     
     def gaussian_kernel(self, size, sigma=1):
         size = int(size) // 2
@@ -125,7 +216,7 @@ class cannyEdgeDetector:
         return img
     
     def detect(self):
-        imgs_final = []
+        self.imgs_final = []
         for i, img in enumerate(self.imgs):    
             self.img_smoothed = convolve(img, self.gaussian_kernel(self.kernel_size, self.sigma))
             self.gradientMat, self.thetaMat = self.sobel_filters(self.img_smoothed)
@@ -135,3 +226,16 @@ class cannyEdgeDetector:
             self.imgs_final.append(img_final)
 
         return self.imgs_final
+#        img=self.imgs_final
+#        img.show()
+        
+    
+def main():
+    app = QtWidgets.QApplication(sys.argv)
+    application = Filters()
+    application.show()
+    
+    sys.exit(app.exec_())
+      
+if __name__ == "__main__":
+   main() 
