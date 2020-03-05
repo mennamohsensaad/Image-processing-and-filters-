@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'MainWindow.ui'
+# Form implementation generated from reading ui file 'MainWindow_Frequency.ui'
 #
-# Created by: PyQt5 UI code generator 5.9.2
+# Created by: PyQt5 UI code generator 5.14.1
 #
 # WARNING! All changes made in this file will be lost!
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -22,7 +24,7 @@ class Ui_MainWindow(object):
         self.tab_filters = QtWidgets.QWidget()
         self.tab_filters.setObjectName("tab_filters")
         self.label_filters_input = QtWidgets.QLabel(self.tab_filters)
-        self.label_filters_input.setGeometry(QtCore.QRect(180, 30, 331, 231))
+        self.label_filters_input.setGeometry(QtCore.QRect(190, 30, 331, 231))
         self.label_filters_input.setAutoFillBackground(True)
         self.label_filters_input.setFrameShape(QtWidgets.QFrame.Box)
         self.label_filters_input.setScaledContents(True)
@@ -138,18 +140,24 @@ class Ui_MainWindow(object):
         self.tab_hybrid.setObjectName("tab_hybrid")
         self.label_histograms_input_2 = QtWidgets.QLabel(self.tab_hybrid)
         self.label_histograms_input_2.setGeometry(QtCore.QRect(180, 20, 241, 171))
+        self.label_histograms_input_2.setAutoFillBackground(True)
         self.label_histograms_input_2.setFrameShape(QtWidgets.QFrame.Box)
+        self.label_histograms_input_2.setScaledContents(True)
         self.label_histograms_input_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.label_histograms_input_2.setObjectName("label_histograms_input_2")
         self.label_histograms_hinput_2 = QtWidgets.QLabel(self.tab_hybrid)
         self.label_histograms_hinput_2.setGeometry(QtCore.QRect(180, 200, 241, 191))
+        self.label_histograms_hinput_2.setAutoFillBackground(True)
         self.label_histograms_hinput_2.setFrameShape(QtWidgets.QFrame.Box)
         self.label_histograms_hinput_2.setTextFormat(QtCore.Qt.PlainText)
+        self.label_histograms_hinput_2.setScaledContents(True)
         self.label_histograms_hinput_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.label_histograms_hinput_2.setObjectName("label_histograms_hinput_2")
         self.label_histograms_output_2 = QtWidgets.QLabel(self.tab_hybrid)
         self.label_histograms_output_2.setGeometry(QtCore.QRect(430, 20, 431, 371))
+        self.label_histograms_output_2.setAutoFillBackground(True)
         self.label_histograms_output_2.setFrameShape(QtWidgets.QFrame.Box)
+        self.label_histograms_output_2.setScaledContents(True)
         self.label_histograms_output_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.label_histograms_output_2.setObjectName("label_histograms_output_2")
         self.label_12 = QtWidgets.QLabel(self.tab_hybrid)
@@ -173,6 +181,12 @@ class Ui_MainWindow(object):
         self.pushButton_histograms_load_4 = QtWidgets.QPushButton(self.tab_hybrid)
         self.pushButton_histograms_load_4.setGeometry(QtCore.QRect(20, 350, 121, 41))
         self.pushButton_histograms_load_4.setObjectName("pushButton_histograms_load_4")
+        self.lineEdit = QtWidgets.QLineEdit(self.tab_hybrid)
+        self.lineEdit.setGeometry(QtCore.QRect(60, 130, 113, 20))
+        self.lineEdit.setObjectName("lineEdit")
+        self.lineEdit_2 = QtWidgets.QLineEdit(self.tab_hybrid)
+        self.lineEdit_2.setGeometry(QtCore.QRect(60, 310, 113, 20))
+        self.lineEdit_2.setObjectName("lineEdit_2")
         self.tabWidget.addTab(self.tab_hybrid, "")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -184,7 +198,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -234,4 +248,3 @@ class Ui_MainWindow(object):
         self.pushButton_histograms_load_3.setText(_translate("MainWindow", "Load image B"))
         self.pushButton_histograms_load_4.setText(_translate("MainWindow", "Make Hybrid"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_hybrid), _translate("MainWindow", "Hybrid"))
-
