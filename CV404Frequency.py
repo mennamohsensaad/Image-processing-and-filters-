@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import   QFileDialog  ,QWidget,QApplication
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QLabel
 from PyQt5.QtGui import QIcon
-from MainWindow import Ui_MainWindow
+from MainWindow_Hybrid import Ui_MainWindow
 from PIL import Image
 import matplotlib.pyplot as pl
 from PIL.ImageQt import ImageQt
