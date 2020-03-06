@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import   QFileDialog  ,QWidget,QApplication
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QLabel
 from PyQt5.QtGui import QIcon
-from MainWindow_Frequency import Ui_MainWindow
+from MainWindow import Ui_MainWindow
 from PIL import Image
 import matplotlib.pyplot as pl
 from PIL.ImageQt import ImageQt
@@ -26,6 +26,8 @@ from scipy.misc import imsave
 from matplotlib.pyplot import imread
 from imageio import imread
 import qimage2ndarray
+import pyqtgraph as pg
+from pyqtgraph import PlotWidget
 
 class Frequency(QtWidgets.QMainWindow):
     def __init__(self):
@@ -100,9 +102,7 @@ class Frequency(QtWidgets.QMainWindow):
         self.ui.label_histograms_output_2.setPixmap(self.pixmap)#####for input image 2
         self.ui.label_histograms_output_2.show     
         
-        #label_histograms_output_2 = QLabel(self)
-        ##pixmap = QPixmap ('marilyn-einstein.png')
-        #label_histograms_output_2.setPixmap(pixmap)
+
         
     def Label1_Name(self):
         
@@ -115,15 +115,12 @@ class Frequency(QtWidgets.QMainWindow):
 
 
     def size1(self):
-        self.ui.lineEdit.setText(""+str(self.pixels1.shape[0])+""+str('x')+""+str(self.pixels1.shape[1])+"")
+        self.ui.lineEdit_11.setText(""+str(self.pixels1.shape[0])+""+str('x')+""+str(self.pixels1.shape[1])+"")
 
     def size2(self):
-        self.ui.lineEdit_2.setText(""+str(self.pixels2.shape[0])+""+str('x')+""+str(self.pixels2.shape[1])+"")
+        self.ui.lineEdit_12.setText(""+str(self.pixels2.shape[0])+""+str('x')+""+str(self.pixels2.shape[1])+"")
         
       
-
-#    def scaleSpectrum(self,A):
-#        return numpy.real(numpy.log10(numpy.absolute(A) + numpy.ones(A.shape)))
 
 
 # sample values from a spherical gaussian function from the center of the image
