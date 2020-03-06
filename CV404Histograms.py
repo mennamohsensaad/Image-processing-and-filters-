@@ -1,7 +1,7 @@
 from PyQt5 import QtWidgets,QtGui , QtCore ,Qt
 from PyQt5.QtWidgets import   QFileDialog  ,QWidget,QApplication
 from PyQt5.QtGui import QPixmap 
-from MainWindow_histograms import Ui_MainWindow
+from MainWindow import Ui_MainWindow
 from PIL import Image
 import matplotlib.pyplot as pl
 from PIL.ImageQt import ImageQt
@@ -25,9 +25,9 @@ class Histograms(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
         self.draw_curve=0
         self.ui.pushButton_histograms_load.clicked.connect(self.LoadImage)
-        self.ui.comboBox_2.currentIndexChanged.connect(self.Draw_histogram)
-        self.ui.comboBox_3.currentIndexChanged.connect(self.check_Effect_to_image)
-        self.ui.comboBox_4.currentIndexChanged.connect(self.Choose_curve)
+        self.ui.comboBox_9.currentIndexChanged.connect(self.Draw_histogram)
+        self.ui.comboBox_7.currentIndexChanged.connect(self.check_Effect_to_image)
+        self.ui.comboBox_8.currentIndexChanged.connect(self.Choose_curve)
        
      
     def LoadImage(self):  
@@ -43,7 +43,7 @@ class Histograms(QtWidgets.QMainWindow):
             #to show size of the image 
             pixels = asarray(self.input_img)
             print(pixels.shape)
-            self.ui.lineEdit_2.setText(""+str(pixels.shape[0])+" "+str('x')+" "+str(pixels.shape[1])+"")
+            self.ui.lineEdit_4.setText(""+str(pixels.shape[0])+" "+str('x')+" "+str(pixels.shape[1])+"")
         
         
     def rgb2gray(self,rgb_image):
@@ -52,7 +52,7 @@ class Histograms(QtWidgets.QMainWindow):
 
 #___________________________________________________________________________________________________________
     def Draw_histogram(self):
-         self.color_of_histogram = str(self.ui.comboBox_2.currentText())
+         self.color_of_histogram = str(self.ui.comboBox_9.currentText())
          print(self.color_of_histogram)
          img = Image.open(self.fileName).convert('YCbCr')
          equized_image=Image.open("equlized_image.jpg").convert('YCbCr')
@@ -160,21 +160,21 @@ class Histograms(QtWidgets.QMainWindow):
 
 #______________________________________check options ________________________________________                               
     def check_Effect_to_image(self):
-        effect= str(self.ui.comboBox_3.currentText())
+        effect= str(self.ui.comboBox_7.currentText())
         print(effect)
         if effect== "Normalize" :
               self.check_color_or_Gray_Normalize()
         elif effect=="Equalize ":
                self.check_color_or_Gray_Equalize()
         elif effect=="Global Thresholding ":
-              thre=(self.ui.lineEdit.text())
+              thre=(self.ui.lineEdit_10.text())
               thre=float(thre)
               print(thre)
               self.global_threshold(thre)
         else :
-             ratio = (self.ui.lineEdit.text())
+             ratio = (self.ui.lineEdit_10.text())
              ratio=float(ratio)
-             size = (self.ui.lineEdit_3.text())
+             size = (self.ui.lineEdit_9.text())
              size=int(size)
              self.Local_thresholding(size ,ratio)
             
@@ -212,7 +212,7 @@ class Histograms(QtWidgets.QMainWindow):
                  print("1")
 #______________________________choose curves_____________________________________________________                 
     def  Choose_curve(self):
-          curve= str(self.ui.comboBox_4.currentText())
+          curve= str(self.ui.comboBox_8.currentText())
           print(curve)
           if curve== "Cumlative curve " :
               #print("cumaltive")
