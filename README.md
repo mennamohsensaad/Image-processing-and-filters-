@@ -30,7 +30,7 @@ need to implement Python functions which will support the following tasks:
 10. Hybrid images.
 
 
-Organize your implementation among the following files:
+Organize implementation among the following files:
 
 1. `CV404Filters.py`: this will include your implementation for filtration functions (requirements 1-3).
 2. `CV404Histograms.py`: this will include your implementation for histogram related tasks (requirements 4-8).
@@ -38,7 +38,7 @@ Organize your implementation among the following files:
 
 ### B) GUI Integration
 
-Integrate your functions in part (A) to the following Qt MainWindow design:
+Integrate  functions in part (A) to the following Qt MainWindow design:
 
 | Tab 1 |
 |---|
