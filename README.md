@@ -1,4 +1,4 @@
-# Image processing andfilters
+# Image processing and filters
 
 
 ## Objectives
