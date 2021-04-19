@@ -1,3 +1,6 @@
+# Image processing andfilters
+
+
 ## Objectives
 
 * Filtration of noisy images using low pass filters such as: average, Gaussian, median.
@@ -6,31 +9,11 @@
 * Frequency domain filters.
 * Hybrid images.
 
-## Deadline
 
-**Monday 2/3/2020 11:59 PM**
-
-## Joining to Assignment Repository
-
-Refer to this sheet to know your **Group number**: (https://docs.google.com/spreadsheets/d/1H0mGNnDtruLanYVxQH6439rXLTpPglXzglBmYt1J_ow/edit?usp=sharing)
-
-1. Register your team in the assignment through [https://classroom.github.com/g/yHMkJP3m](https://classroom.github.com/g/yHMkJP3m).
-2. Use the following pattern to name your team **SBE404-2020-TeamXX**, where **XX** is the team number in two digits (00, 01, ..., 18).
-3. You either join to an existing team, or create a new team.
-
-## Deliverables
-
-When you clone your assignment repository, you will find the following files that you will start working from:
-
-1. `CV404Filters.py`
-2. `CV404Frequency.py`
-3. `CV404Histograms.py`
-4. `MainWindow.ui`
-5. `images`
 
 ### A) Computer Vision Functions
 
-You need to implement Python functions which will support the following tasks:
+need to implement Python functions which will support the following tasks:
 
 1. Add additive noise to the image.
     * For example: Uniform, Gaussian and salt & pepper noise.
@@ -45,8 +28,6 @@ You need to implement Python functions which will support the following tasks:
 8. Transformation from color image to gray scale image and plot of R, G, and B histograms with its distribution function (cumulative curve that you use it for mapping and histogram equalization).
 9. Frequency domain filters (high pass and low pass).
 10. Hybrid images.
-
-You should implement these tasks **without depending on OpenCV library or alike**.
 
 
 Organize your implementation among the following files:
@@ -70,3 +51,7 @@ Integrate your functions in part (A) to the following Qt MainWindow design:
 | Tab 3 |
 |---|
 | <img src=".screen/tab3.png" style="width:500px;"> |
+
+
+
+## link for demo :- https://drive.google.com/file/d/1C1aRlzgId0_spkh9iYVtojZs0Dd1hDId/view?usp=drivesdk
