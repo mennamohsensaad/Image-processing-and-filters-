@@ -41,7 +41,7 @@ Organize your implementation among the following files:
 Integrate your functions in part (A) to the following Qt MainWindow design:
 
 | Tab 1 |
----|---|
+|---|
 | <img src=".screen/tab1.png" style="width:500px"> 
 
 | Tab 2 |
